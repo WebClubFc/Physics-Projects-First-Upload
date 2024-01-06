@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Intensity</title>
+  <title>شدت جریان الکتریکی</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="../Assets/my-icon-5.svg" />
 </head>
-<body>
+<body dir="rtl">
 
   <div class="container">
 
     <div class="input-result">
-      <h1>Calculate Intensity</h1>
-      <input type="text" id="voltInput" placeholder="Enter Voltage" oninput="performDivision()">
-      <input type="text" id="resistorInput" placeholder="Enter Resistor" oninput="performDivision()">
+      <h1>محاسبه شدت جریان الکتریکی</h1>
+      <input type="text" id="voltInput" placeholder="ولتاژ" oninput="performDivision()">
+      <input type="text" id="resistorInput" placeholder="مقاومت" oninput="performDivision()">
       
-      <button id="calculateButton" onclick="showResult()">Calculate</button>
+      <button id="calculateButton" onclick="showResult()">حساب کن!</button>
       <p id="resultParagraph"></p>
     </div>
   </div>
@@ -46,14 +46,14 @@ function showResult() {
     if (!isNaN(volt) && !isNaN(resistor)) {
       // تقسیم و نمایش نتیجه
       var result = volt / resistor;
-      document.getElementById('resultParagraph').innerHTML = 'Intensity: ' + result;
+      document.getElementById('resultParagraph').innerHTML = 'شدت جریان: ' + result;
     } else {
       // نمایش پیام خطا اگر مقادیر حاوی حروف باشند
-      document.getElementById('resultParagraph').innerHTML = 'Invalid input. Please use numeric values.';
+      document.getElementById('resultParagraph').innerHTML = 'لطفا مقادیر مناسبی را انتخاب کنید.';
     }
   } else {
     // نمایش پیام خطا اگر ورودی معتبر نباشد
-    document.getElementById('resultParagraph').innerHTML = 'Please enter valid numeric values for Voltage and Resistor.';
+    document.getElementById('resultParagraph').innerHTML = 'لطفا مقادیر مناسبی را انتخاب کنید.';
   }
 }
 
