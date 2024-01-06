@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voltage(Customer)</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="../Assets/my-icon-5.svg" />
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="input-result">
+      <h1>Calculate Voltage</h1>
+      <input id="electricCharge" type="text" placeholder="Electric Charge(q)">
+      <input id="resistor-input" type="text" placeholder="Resistor">
+      <input id="time" type="text" placeholder="Time(t)">
+      <button onclick="calculateVoltage()">Calculate</button><br />
+      <div class="result">
+        <p id="resultText"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculateVoltage() {
+      // گرفتن مقادیر ورودی از فیلدها
+      var electricCharge = parseFloat(document.getElementById("electricCharge").value);
+      var resistorInput = parseFloat(document.getElementById("resistor-input").value);
+      var time = parseFloat(document.getElementById("time").value);
+
+      // انجام محاسبات
+      var voltage = (electricCharge / time) * resistorInput;
+
+      // نمایش نتیجه
+      document.getElementById("resultText").innerText = "Voltage: " + voltage;
+    }
+  </script>
+
+</body>
+</html>

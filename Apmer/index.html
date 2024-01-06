@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intensity</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="../Assets/my-icon-5.svg" />
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="input-result">
+      <h1>Calculate Intensity</h1>
+      <input type="text" id="voltInput" placeholder="Enter Voltage" oninput="performDivision()">
+      <input type="text" id="resistorInput" placeholder="Enter Resistor" oninput="performDivision()">
+      
+      <button id="calculateButton" onclick="showResult()">Calculate</button>
+      <p id="resultParagraph"></p>
+    </div>
+  </div>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  // اضافه کردن ایونت لیسنر به دکمه
+  document.getElementById('calculateButton').addEventListener('click', function () {
+    performDivision();
+    showResult();
+  });
+});
+
+function showResult() {
+  // گرفتن مقدار از ورودی
+  var voltValue = document.getElementById('voltInput').value;
+  var resistorValue = document.getElementById('resistorInput').value;
+
+  // چک کردن که ورودی از دو عدد جدا شده است یا خیر
+  var isInputValid = /^[0-9.]+$/.test(voltValue) && /^[0-9.]+$/.test(resistorValue);
+
+  if (isInputValid) {
+    // چک کردن که مقادیر از نوع عددی هستند
+    var volt = parseFloat(voltValue);
+    var resistor = parseFloat(resistorValue);
+
+    if (!isNaN(volt) && !isNaN(resistor)) {
+      // تقسیم و نمایش نتیجه
+      var result = volt / resistor;
+      document.getElementById('resultParagraph').innerHTML = 'Intensity: ' + result;
+    } else {
+      // نمایش پیام خطا اگر مقادیر حاوی حروف باشند
+      document.getElementById('resultParagraph').innerHTML = 'Invalid input. Please use numeric values.';
+    }
+  } else {
+    // نمایش پیام خطا اگر ورودی معتبر نباشد
+    document.getElementById('resultParagraph').innerHTML = 'Please enter valid numeric values for Voltage and Resistor.';
+  }
+}
+
+  </script>
+  
+</body>
+</html>

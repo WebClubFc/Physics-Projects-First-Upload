@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #5095bb;
+  padding-top: 50px;
+}
+
+.navbar {
+  background: rgb(72, 126, 72);
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5rem;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+.navbar ul li {
+  list-style: none;
+  font-size: 25px;
+  margin-right: 50px;
+  background: rgb(164, 242, 164);
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  border-radius: 3rem;
+  cursor: pointer;
+}
+
+.navbar ul li:nth-last-child() {
+  margin-right: 0px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  width: 300px;
+}
+
+h1 {
+  font-size: 60px;
+  margin-left: 25rem;
+  margin-top: 10rem;
+  background: -webkit-linear-gradient(45deg, rgb(5, 118, 45), blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.link {
+  transition: 0.5s;
+}
+
+#resistor:hover {
+  background: rgb(214, 118, 238);
+}
+
+#amper:hover {
+  background: rgb(0, 189, 189);
+}
+
+#volt:hover {
+  background: rgb(176, 0, 189);
+}
+
+#custom:hover {
+  background: rgb(207, 36, 136);
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voltage</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="../Assets/my-icon-5.svg" />
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="navbar">
+      <nav>
+        <ul>
+          <li class="link" id="resistor"><a href="../Resistor/index.html">Resistor</a></li>
+          <li class="link" id="amper"><a href="../Amper/index.html">Intensity</a></li>
+          <li class="link" id="main"><a href="../main/index.html">Index Page</a></li>
+          <li class="link" id="custom"><a href="../calculate all/index.html">Voltage(customer)</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class="input-result">
+      <h1>Calculate Voltage</h1>
+      <input type="text" id="electricChargeInput" placeholder="Electric Charge">
+      <input type="text" id="timeInput" placeholder="Time">
+      <input type="text" id="resistorInput" placeholder="Resistor">
+      <button id="calculateButton">Calculate</button>
+      <div class="result">
+        <p id="resultText"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var buttonClicked = false;
+    var buttonClicked = false;
+
+    function calculateVoltage() {
+      if (buttonClicked) {
+        var electricCharge = document.getElementById("electricChargeInput").value;
+        var time = document.getElementById("timeInput").value;
+        var resistor = document.getElementById("resistorInput").value;
+
+        if (/^\d*\.?\d+$/.test(electricCharge) && /^\d*\.?\d+$/.test(time) && /^\d*\.?\d+$/.test(resistor)) {
+          // Calculate voltage
+          electricCharge = parseFloat(electricCharge);
+          time = parseFloat(time);
+          resistor = parseFloat(resistor);
+          
+          var result = (electricCharge / time) * resistor;
+
+          document.getElementById("resultText").innerHTML = "Voltage = " + result.toFixed(2);
+        } else {
+          document.getElementById("resultText").innerHTML = "Please enter valid numbers.";
+        }
+      }
+    }
+
+    document.getElementById("electricChargeInput").addEventListener("input", calculateVoltage);
+    document.getElementById("timeInput").addEventListener("input", calculateVoltage);
+    document.getElementById("resistorInput").addEventListener("input", calculateVoltage);
+
+    document.getElementById("calculateButton").addEventListener("click", function() {
+      buttonClicked = true;
+      calculateVoltage();
+    });
+
+
+
+  </script>
+  
+</body>
+</html>
