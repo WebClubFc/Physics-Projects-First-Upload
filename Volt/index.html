@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voltage</title>
+  <title>ولتاژ</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="../Assets/my-icon-5.svg" />
 </head>
-<body>
+<body dir="rtl">
 
   <div class="container">
     
     <div class="input-result">
-      <h1>Calculate Voltage</h1>
-      <input type="text" id="electricChargeInput" placeholder="Electric Charge">
-      <input type="text" id="timeInput" placeholder="Time">
-      <input type="text" id="resistorInput" placeholder="Resistor">
-      <button id="calculateButton">Calculate</button>
+      <h1>محاسبه ولتاژ</h1>
+      <input type="text" id="electricChargeInput" placeholder="مقدار بارالکتریکی">
+      <input type="text" id="timeInput" placeholder="زمان">
+      <input type="text" id="resistorInput" placeholder="مقاومت">
+      <button id="calculateButton">حساب کن!</button>
       <div class="result">
         <p id="resultText"></p>
       </div>
@@ -41,9 +41,9 @@
           
           var result = (electricCharge / time) * resistor;
 
-          document.getElementById("resultText").innerHTML = "Voltage = " + result.toFixed(2);
+          document.getElementById("resultText").innerHTML = "ولتاژ = " + result.toFixed(2);
         } else {
-          document.getElementById("resultText").innerHTML = "Please enter valid numbers.";
+          document.getElementById("resultText").innerHTML = "لطفا مقادیر مناسبی را انتخاب کنید.";
         }
       }
     }
