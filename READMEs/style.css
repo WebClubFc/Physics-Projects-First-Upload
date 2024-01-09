@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'b nazanin';
+}
+
+body {
+  background: #5095bb;
+}
+
+.container {
+  margin-right: 50px;
+  margin-top: 10px;
+}
+
+h1 {
+  font-family: 'b titr';
+}
+
+p {
+  font-size: 26px;
+}
