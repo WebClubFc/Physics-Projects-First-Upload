@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voltage(Customer)</title>
+  <title>ولتاژ</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="../Assets/my-icon-5.svg" />
 </head>
-<body>
+<body dir="rtl">
 
   <div class="container">
     
     <div class="input-result">
-      <h1>Calculate Voltage</h1>
-      <input id="electricCharge" type="text" placeholder="Electric Charge(q)">
-      <input id="resistor-input" type="text" placeholder="Resistor">
-      <input id="time" type="text" placeholder="Time(t)">
-      <button onclick="calculateVoltage()">Calculate</button><br />
+      <h1>محاسبه ولتاژ</h1>
+      <input id="electricCharge" type="text" placeholder="بار الکتریکی">
+      <input id="resistor-input" type="text" placeholder="مقاومت">
+      <input id="time" type="text" placeholder="زمان">
+      <button onclick="calculateVoltage()">حساب کن!</button><br />
       <div class="result">
         <p id="resultText"></p>
       </div>
@@ -34,7 +34,7 @@
       var voltage = (electricCharge / time) * resistorInput;
 
       // نمایش نتیجه
-      document.getElementById("resultText").innerText = "Voltage: " + voltage;
+      document.getElementById("resultText").innerText = "ولتاژ: " + voltage;
     }
   </script>
 

@@ -2,16 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'b nazanin';
 }
 
 h1 {
   font-size: 45px;
   font-weight: 600;
   color: white;
-  margin-left: 30%;
+  margin-right: 27%;
   margin-bottom: 1%;
   margin-top: 2%;
+  font-family: 'b titr';
 }
 
 body {
@@ -32,18 +33,18 @@ body {
   height: 70%;
   background: rgb(0, 189, 189);
   border-radius: 15px;
-  margin-left: 15rem;
+  margin-right: 15rem;
   padding-top: 1px;
-  margin-top: 60px;
+  transform: translate(0%, 5%);
 }
 
 .input-result input {
   width: 89%;
   height: 4rem;
-  font-size: 20px;
-  padding-left: 20px;
+  font-size: 22px;
+  padding-right: 20px;
   margin-top: 20px;
-  margin-left: 60px;
+  margin-right: 60px;
   border: none;
   outline: none;
   border-radius: 2rem;
@@ -52,20 +53,32 @@ body {
 #resultParagraph {
   margin-bottom: 40px;
   margin-top: 4%;
-  margin-left: 70px;
+  margin-right: 70px;
   color: white;
-  font-size: 24px;
+  font-size: 26px;
 }
 
 button {
   width: 89%;
   height: 4rem;
   margin-top: 20px;
-  margin-left: 60px;
+  margin-right: 60px;
   border-radius: 2rem;
   background: yellow;
   border: none;
   outline: none;
   font-size: 22px;
   cursor: pointer;
+  font-family: 'b zar';
+  font-weight: 600;
+}
+
+#help {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 80px;
+  background: transparent;
+  transform: translate(-180%, -250%);
 }

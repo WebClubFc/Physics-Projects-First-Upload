@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resistor</title>
+  <title>مقاومت</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="../Assets/my-icon-5.svg" />
 </head>
-<body>
+<body dir="rtl">
 
   <div class="container">
    
     <div class="input-result">
-      <h1>Calculate Resistor</h1>
-      <input type="text" id="resistorInput" placeholder="Resistor values">
-      <button onclick="calculateResistor()">Calculate</button><br />
+      <h1>محاسبه مقاومت</h1>
+      <input type="text" id="resistorInput" placeholder="لطفا مقدار مقاومت‌ها را وارد کنید.">
+      <button onclick="calculateResistor()">حساب کن!</button><br />
 
-      <p class="label">Mode: </p>
+      <p class="label">حالت: </p>
       <input type="checkbox" id="calculationMode">
 
       <div class="result">
@@ -25,6 +25,8 @@
     </div>
   </div>
 
+  <button id="help"><a href="../READMEs/resistor-help.html/Resistor.html"><img src="../icons8-help.gif" alt=""></a></button>
+
   <script>
     var isParallelMode = false;
 
@@ -32,41 +34,33 @@
       var inputElement = document.getElementById("resistorInput");
       var inputValue = inputElement.value;
 
-      // بررسی ورودی برای اطمینان از وجود عدد معتبر
       if (inputValue.trim() !== "") {
         var resistorValues = inputValue.split(',');
 
-        // بررسی حداقل یک مقدار غیر صفر در ورودی
         if (resistorValues.some(value => parseFloat(value.trim()) !== 0)) {
           var total;
           if (isParallelMode) {
-            // حذف مقادیر صفر از حالت موازی
             var validValues = resistorValues.filter(value => parseFloat(value.trim()) !== 0);
             if (validValues.length > 0) {
               var fractions = validValues.map(value => "1 / " + value.trim());
               total = eval(fractions.join('+'));
-              var resultMessage = "Parallel: " + fractions.join(" + ") + " = " + total;
+              var resultMessage = "موازی: " + fractions.join(" + ") + " = " + total;
 
-              // نمایش نتیجه در المان مربوطه
               document.getElementById("calculationResult").innerText = resultMessage;
             } else {
-              // اگر همه مقادیر صفر باشند، نمایش پیام خطا
-              document.getElementById("calculationResult").innerText = "Please Enter at Least One Non-Zero Number";
+              document.getElementById("calculationResult").innerText = "لطفا مقادیر مناسبی را انتخاب کنید.";
             }
           } else {
             total = eval(resistorValues.join('+'));
-            var resultMessage = "Consecutive: " + resistorValues.join(" + ") + " = " + total;
+            var resultMessage = "متوالی: " + resistorValues.join(" + ") + " = " + total;
 
-            // نمایش نتیجه در المان مربوطه
             document.getElementById("calculationResult").innerText = resultMessage;
           }
         } else {
-          // نمایش پیام خطا در المان مربوطه
-          document.getElementById("calculationResult").innerText = "Please Enter at Least One Non-Zero Number";
+          document.getElementById("calculationResult").innerText = "لطفا مقادیر مناسبی را انتخاب کنید.";
         }
       } else {
-        // نمایش پیام خطا در المان مربوطه
-        document.getElementById("calculationResult").innerText = "Please Enter Valid Numbers";
+        document.getElementById("calculationResult").innerText = "لطفا مقادیر مناسبی را انتخاب کنید.";
       }
     }
 
@@ -74,11 +68,10 @@
 
     function updateCalculationMode() {
       isParallelMode = document.getElementById("calculationMode").checked;
-      var buttonText = isParallelMode ? "Calculate (Parallel)" : "Calculate (Consecutive)";
+      var buttonText = isParallelMode ? "حساب کن! (موازی)" : "حساب کن! (متوالی)";
       document.querySelector('button').innerText = buttonText;
     }
 
-    // تابع updateCalculationMode به طور پیش‌فرض فراخوانی شود
     updateCalculationMode();
   </script>
   
