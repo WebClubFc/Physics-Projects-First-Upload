@@ -35,7 +35,7 @@ body {
   border-radius: 15px;
   margin-right: 15rem;
   padding-top: 1px;
-  margin-top: 60px;
+  transform: translate(0%, 5%);
 }
 
 .input-result input {
@@ -71,4 +71,14 @@ button {
   cursor: pointer;
   font-family: 'b zar';
   font-weight: 600;
+}
+
+#help {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 80px;
+  background: transparent;
+  transform: translate(-180%, -250%);
 }
