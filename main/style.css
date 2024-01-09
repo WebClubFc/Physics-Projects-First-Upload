@@ -42,7 +42,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 350px;
+  width: 430px;
   border-radius: 3rem;
   cursor: pointer;
 }
@@ -57,7 +57,7 @@ body {
   align-items: center;
   justify-content: center;
   color: black;
-  width: 350px;
+  width: 430px;
 }
 
 h1 {
